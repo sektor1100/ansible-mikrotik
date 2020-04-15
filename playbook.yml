@@ -1,0 +1,13 @@
+---
+
+- hosts: TP
+  
+  tasks: 
+  - name: Ping host
+    routeros_command:
+      commands: /system routerboard print
+    register: result
+  
+  - debug: 
+     msg: "{{ result.stdout }}"
+      
